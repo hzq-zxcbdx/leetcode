@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "*.html": "html",
+        "*.vue": "vue",
+        "*.czml": "xml",
+        "iostream": "cpp",
+        "ostream": "cpp",
+        "*.tcc": "cpp",
+        "type_traits": "cpp"
+    }
+}
