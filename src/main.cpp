@@ -1,16 +1,19 @@
 #include <iostream>
 #include "ListNode.h"
+#include "stdio.h"
 using namespace std;
 
 int main(int argc, char **argv)
 {
 
-    std::vector<int> nums = {1, 2, 3, 4, 5};
+    std::vector<int> nums = {1, 2};
 
     Solution *su = new Solution;
     ListNode *head = su->createLinkedList(nums);
-    ListNode *out = su->middleNode(head);
-    cout << out->val << endl;
+    ListNode *out = su->reverseKGroup(head, 2);
+
+    while (1)
+        ;
 
     return 0;
 }

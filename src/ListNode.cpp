@@ -26,6 +26,29 @@ ListNode *Solution::middleNode(ListNode *head)
     }
     return slow;
 }
+// leetcode 25 k个一组翻转数组
+
+ListNode *Solution::reverseKGroup(ListNode *head, int k)
+{
+    ListNode *temp = head;
+    for (int i = 0; i < k; i++)
+    {
+        if (head == nullptr)
+        {
+            return temp;
+        };
+        head = head->next;
+    }
+    ListNode *newhead = reverseKGroup(head, k);
+    temp = Solution::reverseN(temp, k);
+    ListNode *temp1 = temp;
+    while (temp1->next != nullptr)
+    {
+        temp1 = temp1->next;
+    }
+    temp1->next = newhead;
+    return temp;
+}
 
 ListNode *Solution::createLinkedList(const std::vector<int> &nums)
 {
