@@ -49,6 +49,46 @@ ListNode *Solution::reverseKGroup(ListNode *head, int k)
     temp1->next = newhead;
     return temp;
 }
+ListNode *Solution::reverse(ListNode *head)
+{
+    if (head->next == nullptr)
+    {
+        return head;
+    }
+    ListNode *newhead = reverse(head->next);
+    head->next->next = head;
+    head->next = nullptr;
+    return newhead;
+}
+
+bool Solution::isPalindrome(ListNode *head)
+{
+    ListNode *p = head;
+    ListNode *newlist = new ListNode();
+    ListNode *np = newlist;
+    while (p != nullptr)
+    {
+        newlist->next = new ListNode(p->val);
+        newlist = newlist->next;
+        p = p->next;
+    }
+    np = np->next;
+    head = Solution::reverse(head);
+    while (np->next != nullptr)
+    {
+        if (np->val == head->val)
+        {
+            np = np->next;
+            head = head->next;
+            continue;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
 ListNode *Solution::createLinkedList(const std::vector<int> &nums)
 {

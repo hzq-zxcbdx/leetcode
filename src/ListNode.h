@@ -35,8 +35,10 @@ private:
 
 public:
     ListNode *middleNode(ListNode *head);
+    bool isPalindrome(ListNode *head);
     ListNode *createLinkedList(const std::vector<int> &nums);
     ListNode *reverseKGroup(ListNode *head, int k);
+    ListNode *reverse(ListNode *head);
     void test();
 };
 
