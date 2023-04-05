@@ -11,6 +11,8 @@ class Solution_array
 private:
 public:
     int removeDuplicates(vector<int> &nums);
+    int removeElement(vector<int> &nums, int val);
+    vector<int> twoSum(vector<int> &numbers, int target);
 };
 
 #endif
