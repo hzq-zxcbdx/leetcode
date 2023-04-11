@@ -57,3 +57,23 @@ vector<int> Solution_array::twoSum(vector<int> &numbers, int target)
 
     return res;
 }
+
+string Solution_array::longestPalindrome(string s)
+{
+    string out;
+
+    for (int i = 0; i < s.length(); i++)
+    {
+        string str1 = palindrome(s, i, i);
+        string str2 = palindrome(s, i, i + 1);
+        if (str1.length() > out.length())
+        {
+            out = str1;
+        }
+        if (str2.length() > out.length())
+        {
+            out = str2;
+        }
+    }
+    return out;
+}

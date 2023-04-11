@@ -8,9 +8,10 @@ int main(int argc, char **argv)
 {
 
     std::vector<int> nums = {-1, -2, -3, -4, -5};
+    string s = "bb";
 
     Solution_array *su = new Solution_array;
-    std::vector<int> out = su->twoSum(nums, -8);
+    string out = su->longestPalindrome(s);
 
     return 0;
 }
